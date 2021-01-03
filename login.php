@@ -42,7 +42,7 @@
                                     <input type="submit" value="Masuk" name="register_submit" id="register_submit"
                                         class="form-control form-control-lg bg-primary" style="color: white">
                                     <label class="text-muted text-center pt-2">Anda belum punya akun? <a href="register.php"
-                                            style="color:blue;font-weight:bold">Daftar Sekarang</a></label><br>
+                                            style="color:primary;font-weight:bold">Daftar Sekarang</a></label><br>
                                 </div>
                             </form>
                         </div>

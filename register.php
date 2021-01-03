@@ -47,7 +47,7 @@
                                         id="register_submit" class="form-control form-control-lg bg-primary"
                                         style="color: white">
                                     <label class="text-muted text-center pt-2">Sudah punya akun? <a href="login.php"
-                                            style="color:blue;font-weight:bold">Masuk Sekarang</a></label><br>
+                                            style="color:primary;font-weight:bold">Masuk Sekarang</a></label><br>
                                 </div>
                             </form>
                         </div>
