@@ -1,3 +1,7 @@
+<?php 
+include 'function.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,6 +49,12 @@
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class=""><i class="material-icons md-24 pr-2">work</i></span>
                         <span class="menu-collapsed">Rekening</span>
+                    </div>
+                </a>
+                <a href="logout.php" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class=""><i class="material-icons md-24 pr-2">work</i></span>
+                        <span class="menu-collapsed">Logout</span>
                     </div>
                 </a>
             </ul>

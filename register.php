@@ -1,3 +1,7 @@
+<?php 
+include 'function.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,8 +31,13 @@
                     <div class="card shadow-1 my-auto pt-2" style="width: 85%">
                         <div class="card-body">
                             <h3 class="card-title text-center pb-1"><strong>Daftar Akun Baru</strong></h3>
+                            <?php if(isset($_SESSION['fail_message'])) {?>
+                                <h6 class="card-subtitle mb-2 text-muted text-center"><?=$_SESSION["fail_message"]?></h6>
+                            <?php 
+                                unset($_SESSION["fail_message"]);
+                            } ?>
                             <!-- <h6 class="card-subtitle mb-2 text-muted text-center">Lorem ipsum is simply dummy text</h6> -->
-                            <form action="" class="form pl-3 pr-3 pt-4" id="register-form" method="post">
+                            <form action="func_register.php" class="form pl-3 pr-3 pt-4" id="register-form" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Nama</label><br>
                                     <input type="text" name="name" id="name" class="form-control bg-light" required>
@@ -40,6 +49,19 @@
                                 <div class="form-group">
                                     <label>Password</label><br>
                                     <input type="password" name="password" id="password" class="form-control bg-light"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>No KTP</label><br>
+                                    <input type="text" name="no_ktp" id="no_ktp" class="form-control bg-light" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Alamat</label><br>
+                                    <input type="text" name="alamat" id="alamat" class="form-control bg-light" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Upload foto</label><br>
+                                    <input type="file" name="fileToUpload" id="fileToUpload" accept="image/x-png,image/gif,image/jpeg"
                                         required>
                                 </div>
                                 <div class="form-group pt-4 text-center">

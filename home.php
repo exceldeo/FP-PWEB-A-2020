@@ -1,3 +1,7 @@
+<?php 
+include 'function.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +32,13 @@
                     <div>
                         <ul class="nav">
                             <li class="nav-item">
+                            <?php if(isset($_SESSION['user'])) {?>
+                                <a type="button" class=" btn btn-outline-danger" href="logout.php"
+                                    tabindex="-1" aria-disabled="true">Logout</a>
+                            <?php }else{ ?>
                                 <a type="button" class=" btn btn-outline-primary" href="login.php"
                                     tabindex="-1" aria-disabled="true">Login</a>
+                            <?php }?>
                             </li>
                         </ul>
                     </div>
