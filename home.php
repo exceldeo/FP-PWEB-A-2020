@@ -31,14 +31,25 @@ include 'function.php';
                     </button>
                     <div>
                         <ul class="nav">
-                            <li class="nav-item">
-                            <?php if(isset($_SESSION['user'])) {?>
-                                <a type="button" class=" btn btn-outline-danger" href="logout.php"
-                                    tabindex="-1" aria-disabled="true">Logout</a>
-                            <?php }else{ ?>
+                            <!-- <li class="nav-item">
                                 <a type="button" class=" btn btn-outline-primary" href="login.php"
                                     tabindex="-1" aria-disabled="true">Login</a>
-                            <?php }?>
+                            </li> -->
+                            <li class="nav-item">
+                                <div class="col-lg-2 pl-2">
+                                    <button class="btn dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        My Account
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="rekening.php">Rekening</a>
+                                        <?php if(isset($_SESSION['user'])) {?>
+                                        <a class="dropdown-item" href="logout.php">Logout</a>
+                                        <?php }else{ ?>
+                                        <a class="dropdown-item" href="login.php">Login</a>
+                                        <?php }?>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>

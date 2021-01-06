@@ -86,10 +86,11 @@ $data = query("SELECT u.id, u.nama, jk.nama_jenis_rekening, r.no_rekening, r.sta
                                         <table class="table table-hover table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>Customer ID</th>
-                                                    <th>Customer</th>
+                                                    <th>ID Nasabah</th>
+                                                    <th>Nasabah</th>
                                                     <th>Jenis Rekening</th>
                                                     <th>Nomor Rekening</td>
+                                                    <th>Status</td>
                                                     <th>Keterangan</th>
                                                 </tr>
                                             </thead>
@@ -106,6 +107,13 @@ $data = query("SELECT u.id, u.nama, jk.nama_jenis_rekening, r.no_rekening, r.sta
                                                     </td>
                                                     <td><?=$row['nama_jenis_rekening']?></td>
                                                     <td><?=$row['no_rekening']?></td>
+                                                    <?php if($row['status'] == 1):?>
+                                                <td>Aktif</td>
+                                                <?php else :?>
+                                                <td>Non - Aktif</td>
+                                                <?php endif?>
+                                                    <a href="#"
+                                                        class="btn btn-success btn-sm">Status</a>
                                                     <td>
                                                         <a href="#"
                                                             class="btn btn-warning btn-sm">Detail</a>
@@ -116,6 +124,42 @@ $data = query("SELECT u.id, u.nama, jk.nama_jenis_rekening, r.no_rekening, r.sta
                                                 <?php endforeach ?>
                                             </tbody>
                                         </table>
+                                    </div>
+                                </div>
+                                <!-- Modal Tambah Rekening -->
+                                <div class="modal fade" id="detailRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel" style="color: black">Detail Rekening</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6" style="color: black">
+                                                        <h5>ID Nasabah</h5>
+                                                        <h5>Nama Nasabah</h5>
+                                                        <h5>Nomor KTP</h5>
+                                                        <h5>Nomor Rekening</h5>
+                                                        <h5>Jenis Rekening</h5>
+                                                        <h5>Tanggal Aktif</h5>
+                                                    </div>
+                                                    <div class="col-md-6" style="color: black">
+                                                        <h5>0001</h5>
+                                                        <h5>Hana</h5>
+                                                        <h5>01234 5678 8908</h5>
+                                                        <h5>0511 8400 7892</h5>
+                                                        <h5>Gold</h5>
+                                                        <h5>3 Januari 2020</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
