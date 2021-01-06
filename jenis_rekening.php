@@ -59,10 +59,12 @@
                         <div class="card border">
                             <div class="card-header">
                                 <h4 class="card-title">
-                                    DAFTAR REKENING
+                                    JENIS REKENING
                                 </h4>
                             </div>
                             <div class="card-body">
+                                <span><a href="#"><button
+                                    class="btn btn-primary mb-3 float-left" data-toggle="modal" data-target="#addRekening">Tambah Rekening</button></a></span>
                                 <form action="" method="get">
                                     <div class="input-group mb-3 col-md-4 float-right">
                                         <input type="text" name="q" class="form-control" placeholder="Cari...">
@@ -75,11 +77,9 @@
                                     <table class="table table-hover table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Nasabah</th>
-                                                <th>Nasabah</th>
-                                                <th>Jenis Rekening</th>
-                                                <th>Nomor Rekening</td>
-                                                <th>Status</td>
+                                                <th>Rekening ID</th>
+                                                <th>Rekening</th>
+                                                <th>Detail</th>
                                                 <th>Keterangan</th>
                                             </tr>
                                         </thead>
@@ -87,55 +87,73 @@
                                             <tr>
                                                 <td><strong>0001</strong></td>
                                                 <td>
-                                                    <strong>Hana</strong>
+                                                    <strong>Gold</strong>
                                                 </td>
-                                                <td>Gold</td>
-                                                <td>05111840000111</td>
-                                                <td>Aktif</td>
+                                                <td>Biaya bulanan Rp7.500,00 dan limit tarik tunai<br>sebesarRp10.000.000,00 per-hari.</td>
                                                 <td>
                                                     <a href="#"
-                                                        class="btn btn-success btn-sm">Status</a>
-                                                    <a href="#"
-                                                        class="btn btn-warning btn-sm" data-toggle="modal" data-target="#detailRekening">Detail</a>
+                                                        class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editRekening">Edit</a>
                                                     <button class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Hapus Data?')">Hapus</button>
+                                                        onclick="return confirm('Hapus Rekening?')">Hapus</button>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <!-- Modal Tambah Rekening -->
-                                <div class="modal fade" id="detailRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="addRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel" style="color: black">Detail Rekening</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel" style="color: black">Tambah Jenis Rekening</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-md-6" style="color: black">
-                                                        <h5>ID Nasabah</h5>
-                                                        <h5>Nama Nasabah</h5>
-                                                        <h5>Nomor KTP</h5>
-                                                        <h5>Nomor Rekening</h5>
-                                                        <h5>Jenis Rekening</h5>
-                                                        <h5>Tanggal Aktif</h5>
+                                                <form action="">
+                                                    <div class="form-group">
+                                                        <label style="color: black">Jenis Rekening</label>
+                                                        <input type="text" class="form-control border border-secondary" id="" placeholder="">
                                                     </div>
-                                                    <div class="col-md-6" style="color: black">
-                                                        <h5>0001</h5>
-                                                        <h5>Hana</h5>
-                                                        <h5>01234 5678 8908</h5>
-                                                        <h5>0511 8400 7892</h5>
-                                                        <h5>Gold</h5>
-                                                        <h5>3 Januari 2020</h5>
+                                                    <div class="form-group">
+                                                        <label style="color: black">Keterangan</label>
+                                                        <textarea class="form-control border border-secondary" id="" rows="3"></textarea>
                                                     </div>
-                                                </div>
+                                                </form>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-primary">Tambah</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal Edit Rekening -->
+                                <div class="modal fade" id="editRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel" style="color: black">Edit Jenis Rekening</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="">
+                                                    <div class="form-group">
+                                                        <label style="color: black">Jenis Rekening</label>
+                                                        <input type="text" class="form-control border border-secondary" id="" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="color: black">Keterangan</label>
+                                                        <textarea class="form-control border border-secondary" id="" rows="3"></textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-primary">Edit</button>
                                             </div>
                                         </div>
                                     </div>

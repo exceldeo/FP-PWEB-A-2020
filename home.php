@@ -27,9 +27,21 @@
                     </button>
                     <div>
                         <ul class="nav">
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a type="button" class=" btn btn-outline-primary" href="login.php"
                                     tabindex="-1" aria-disabled="true">Login</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <div class="col-lg-2 pl-2">
+                                    <button class="btn dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        My Account
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="rekening.php">Rekening</a>
+                                        <a class="dropdown-item" href="#">Logout</a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
