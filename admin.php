@@ -1,7 +1,7 @@
 <?php 
 include 'function.php';
 
-$data = query("SELECT u.id, u.nama, jk.nama_jenis_rekening, r.no_rekening, r.status FROM user u, jenis_rekekening jk , rekening r WHERE u.id = r.user_id AND r.jenis_rekening  = jk.id_jenis_rekening");
+$data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_rekening, r.status FROM user u, jenis_rekekening jk , rekening r WHERE u.id = r.user_id AND r.jenis_rekening  = jk.id_jenis_rekening");
 // var_dump($data);
 ?>
 
@@ -72,6 +72,16 @@ $data = query("SELECT u.id, u.nama, jk.nama_jenis_rekening, r.no_rekening, r.sta
                                     <h4 class="card-title">
                                         DAFTAR REKENING
                                     </h4>
+                                    <?php if(isset($_SESSION['fail_message'])) {?>
+                                        <h6 class="card-subtitle mb-2 text-muted text-center"><?=$_SESSION["fail_message"]?></h6>
+                                    <?php 
+                                        unset($_SESSION["fail_message"]);
+                                    } ?>
+                                    <?php if(isset($_SESSION['success_message'])) {?>
+                                        <h6 class="card-subtitle mb-2 text-muted text-center"><?=$_SESSION["success_message"]?></h6>
+                                    <?php 
+                                        unset($_SESSION["success_message"]);
+                                    } ?>
                                 </div>
                                 <div class="card-body">
                                     <form action="" method="get">
@@ -107,19 +117,19 @@ $data = query("SELECT u.id, u.nama, jk.nama_jenis_rekening, r.no_rekening, r.sta
                                                     </td>
                                                     <td><?=$row['nama_jenis_rekening']?></td>
                                                     <td><?=$row['no_rekening']?></td>
-                                                    <?php if($row['status'] == 1):?>
-                                                <td>Aktif</td>
-                                                <?php else :?>
-                                                <td>Non - Aktif</td>
-                                                <?php endif?>
+                                                <?php if($row['status'] == 1):?>
+                                                    <td>Aktif</td>
                                                     <td>
-                                                    <a href="#"
-                                                        class="btn btn-success btn-sm">Status</a>
-                                                        <a href="#"
-                                                            class="btn btn-warning btn-sm">Detail</a>
-                                                        <button class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('Hapus Varian?')">Hapus</button>
+                                                    <a href="updateStatusnon.php?id_rekening=<?=$row['id_rekening']?>"
+                                                        class="btn btn-success btn-sm">Nonaktifkan</a>
                                                     </td>
+                                                <?php else: ?>
+                                                    <td>Nonaktif</td>
+                                                    <td>
+                                                    <a href="updateStatus.php?id_rekening=<?=$row['id_rekening']?>"
+                                                        class="btn btn-success btn-sm">Aktivasi</a>
+                                                    </td>
+                                                <?php endif; ?>
                                                 </tr>
                                                 <?php endforeach ?>
                                             </tbody>

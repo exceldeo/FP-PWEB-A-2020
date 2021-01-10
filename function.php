@@ -86,9 +86,23 @@ function updateStatusRek($idRek){
   $id=htmlspecialchars($idRek);
 
   $query="UPDATE rekening SET 
-      status = '1',
-      WHERE id_rekening = $id
-      ";
+      status = '1'
+      WHERE id_rekening = $id";
+  // var_dump($query);die;
+  mysqli_query($conn,$query);
+  $cek = mysqli_affected_rows($conn);
+  close();
+  return $cek;
+}
+
+function updateStatusReknon($idRek){
+  global $conn;
+  
+  $id=htmlspecialchars($idRek);
+
+  $query="UPDATE rekening SET 
+      status = '0'
+      WHERE id_rekening = $id";
   // var_dump($query);die;
   mysqli_query($conn,$query);
   $cek = mysqli_affected_rows($conn);

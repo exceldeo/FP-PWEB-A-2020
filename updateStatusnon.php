@@ -3,7 +3,7 @@
 
   $id=$_GET["id_rekening"];
 
-  if(updateStatusRek($id)>0){
+  if(updateStatusReknon($id)>0){
     $_SESSION["success_message"] = "data berhasil diubah";
   }
   else{
