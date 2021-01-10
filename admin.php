@@ -112,9 +112,9 @@ $data = query("SELECT u.id, u.nama, jk.nama_jenis_rekening, r.no_rekening, r.sta
                                                 <?php else :?>
                                                 <td>Non - Aktif</td>
                                                 <?php endif?>
+                                                    <td>
                                                     <a href="#"
                                                         class="btn btn-success btn-sm">Status</a>
-                                                    <td>
                                                         <a href="#"
                                                             class="btn btn-warning btn-sm">Detail</a>
                                                         <button class="btn btn-danger btn-sm"
