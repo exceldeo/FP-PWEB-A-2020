@@ -63,20 +63,15 @@ function register($data,$file){
 
   $query="INSERT INTO user value (NULL,'$nama','$email','$password', 'U')";
 
-  $result = mysqli_query($conn,$query);
+  mysqli_query($conn,$query);
   
   $id = $conn->insert_id;
-  
-  $date = new DateTime(null, new DateTimeZone('Asia/Jakarta'));
-  $tanggal = $date->format('Y-m-d H:i:s');
 
   $_SESSION["user"]["id"] = $id;
   $_SESSION["user"]["nama"] = $nama;
   $_SESSION["user"]["role"] = 'U';
 
-  // var_dump($tanggal);die;
-
-  $query2="INSERT INTO detail_user VALUES (NULL, '$id', '$no_ktp', '$alamat', '$tanggal', current_timestamp())";
+  $query2="INSERT INTO detail_user VALUES (NULL, '$id', '$no_ktp', '$alamat', '$file', NULL)";
   
   mysqli_query($conn,$query2);
 
