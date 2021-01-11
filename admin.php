@@ -2,7 +2,7 @@
 include 'function.php';
 
 $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_rekening, r.status FROM user u, jenis_rekekening jk , rekening r WHERE u.id = r.user_id AND r.jenis_rekening  = jk.id_jenis_rekening");
-// var_dump($data);
+
 ?>
 
 <!DOCTYPE html>
@@ -46,10 +46,10 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                             <span class="menu-collapsed">Dashboard</span>
                         </div>
                     </a>
-                    <a href="rekening.php" class="bg-dark list-group-item list-group-item-action">
+                    <a href="jenis_rekening.php" class="bg-dark list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class=""><i class="material-icons md-24 pr-2">work</i></span>
-                            <span class="menu-collapsed">Rekening</span>
+                            <span class="menu-collapsed">Jenis Rekening</span>
                         </div>
                     </a>
                     <a href="logout.php" class="bg-dark list-group-item list-group-item-action">
@@ -72,16 +72,6 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                                     <h4 class="card-title">
                                         DAFTAR REKENING
                                     </h4>
-                                    <?php if(isset($_SESSION['fail_message'])) {?>
-                                        <h6 class="card-subtitle mb-2 text-muted text-center"><?=$_SESSION["fail_message"]?></h6>
-                                    <?php 
-                                        unset($_SESSION["fail_message"]);
-                                    } ?>
-                                    <?php if(isset($_SESSION['success_message'])) {?>
-                                        <h6 class="card-subtitle mb-2 text-muted text-center"><?=$_SESSION["success_message"]?></h6>
-                                    <?php 
-                                        unset($_SESSION["success_message"]);
-                                    } ?>
                                 </div>
                                 <div class="card-body">
                                     <form action="" method="get">
@@ -93,6 +83,16 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                                         </div>
                                     </form>
                                     <div class="table-responsive text-center">
+                                        <?php if(isset($_SESSION['fail_message'])) {?>
+                                            <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["fail_message"]?></h6>
+                                        <?php 
+                                            unset($_SESSION["fail_message"]);
+                                        } ?>
+                                        <?php if(isset($_SESSION['success_message'])) {?>
+                                            <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["success_message"]?></h6>
+                                        <?php 
+                                            unset($_SESSION["success_message"]);
+                                        } ?>
                                         <table class="table table-hover table-bordered">
                                             <thead>
                                                 <tr>
@@ -131,7 +131,7 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                                                     </td>
                                                 <?php endif; ?>
                                                 </tr>
-                                                <?php endforeach ?>
+                                            <?php endforeach ?>
                                             </tbody>
                                         </table>
                                     </div>

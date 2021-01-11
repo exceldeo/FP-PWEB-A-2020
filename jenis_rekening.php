@@ -1,3 +1,10 @@
+<?php 
+include 'function.php';
+
+$data = query("SELECT * FROM jenis_rekekening");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +51,13 @@
                 <a href="jenis_rekening.php" class="bg-dark list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class=""><i class="material-icons md-24 pr-2">work</i></span>
-                        <span class="menu-collapsed">Rekening</span>
+                        <span class="menu-collapsed">Jenis Rekening</span>
+                    </div>
+                </a>
+                <a href="logout.php" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class=""><i class="material-icons md-24 pr-2">work</i></span>
+                        <span class="menu-collapsed">Logout</span>
                     </div>
                 </a>
             </ul>
@@ -63,8 +76,8 @@
                                 </h4>
                             </div>
                             <div class="card-body">
-                                <span><a href="#"><button
-                                    class="btn btn-primary mb-3 float-left" data-toggle="modal" data-target="#addRekening">Tambah Rekening</button></a></span>
+                                <span><button
+                                    class="btn btn-primary mb-3 float-left" data-toggle="modal" data-target="#addJenisRekening">Tambah Jenis Rekening</button></span>
                                 <form action="" method="get">
                                     <div class="input-group mb-3 col-md-4 float-right">
                                         <input type="text" name="q" class="form-control" placeholder="Cari...">
@@ -74,89 +87,114 @@
                                     </div>
                                 </form>
                                 <div class="table-responsive text-center">
+                                    <?php if(isset($_SESSION['fail_message'])) {?>
+                                        <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["fail_message"]?></h6>
+                                    <?php 
+                                        unset($_SESSION["fail_message"]);
+                                    } ?>
+                                    <?php if(isset($_SESSION['success_message'])) {?>
+                                        <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["success_message"]?></h6>
+                                    <?php 
+                                        unset($_SESSION["success_message"]);
+                                    } ?>
                                     <table class="table table-hover table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Rekening ID</th>
-                                                <th>Rekening</th>
+                                                <th>ID</th>
+                                                <th>Jenis Rekening</th>
                                                 <th>Detail</th>
                                                 <th>Keterangan</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td><strong>0001</strong></td>
-                                                <td>
-                                                    <strong>Gold</strong>
-                                                </td>
-                                                <td>Biaya bulanan Rp7.500,00 dan limit tarik tunai<br>sebesarRp10.000.000,00 per-hari.</td>
-                                                <td>
-                                                    <a href="#"
-                                                        class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editRekening">Edit</a>
-                                                    <button class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Hapus Rekening?')">Hapus</button>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                                $nomor = 1;
+                                                foreach($data as $row) :
+                                                // var_dump($row);
+                                                ?>
+                                                <tr>
+                                                    <td><strong><?=$nomor++?></strong></td>
+                                                    <td>
+                                                        <strong><?=$row['nama_jenis_rekening']?></strong>
+                                                    </td>
+                                                    <td><?=$row['keterangan']?></td>
+                                                    <td>
+                                                        <form action="hapusJenisRekening.php" method="POST">
+                                                            <a href="#"
+                                                                class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editJenisRekening<?=$row["id_jenis_rekening"]?>">Edit</a>
+
+                                                            <input type="hidden" name="id" value="<?=$row["id_jenis_rekening"]?>">
+                                                            <button type="submit" value="Submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus Rekening?')">Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach ?>
                                         </tbody>
                                     </table>
-                                </div>
-                                <!-- Modal Tambah Rekening -->
-                                <div class="modal fade" id="addRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel" style="color: black">Tambah Jenis Rekening</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="">
-                                                    <div class="form-group">
-                                                        <label style="color: black">Jenis Rekening</label>
-                                                        <input type="text" class="form-control border border-secondary" id="" placeholder="">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label style="color: black">Keterangan</label>
-                                                        <textarea class="form-control border border-secondary" id="" rows="3"></textarea>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                <button type="button" class="btn btn-primary">Tambah</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal Edit Rekening -->
-                                <div class="modal fade" id="editRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel" style="color: black">Edit Jenis Rekening</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="">
-                                                    <div class="form-group">
-                                                        <label style="color: black">Jenis Rekening</label>
-                                                        <input type="text" class="form-control border border-secondary" id="" placeholder="">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label style="color: black">Keterangan</label>
-                                                        <textarea class="form-control border border-secondary" id="" rows="3"></textarea>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                <button type="button" class="btn btn-primary">Edit</button>
+                                    <!-- Modal Tambah Rekening -->
+                                    <div class="modal fade" id="addJenisRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel" style="color: black">Tambah Jenis Rekening</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="tambahJenisRek.php" method="POST" id="formTambahJenisRekening">
+                                                        <div class="form-group">
+                                                            <label style="color: black">Jenis Rekening</label>
+                                                            <input type="text" name="jenis_rek" class="form-control border border-secondary" id="" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label style="color: black">Detail</label>
+                                                            <textarea class="form-control border border-secondary" name="detail" id="" rows="3"></textarea>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                    <button type="submit" value="Submit" form="formTambahJenisRekening" class="btn btn-primary">Tambah</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php
+                                        foreach($data as $row) :
+                                        // var_dump($row);
+                                    ?>
+                                        <!-- Modal Edit Rekening -->
+                                        <div class="modal fade" id="editJenisRekening<?=$row["id_jenis_rekening"]?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel" style="color: black">Edit Jenis Rekening</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form id="formEditJenisRekening<?=$row["id_jenis_rekening"]?>" action="updateJenisRek.php" method="POST">
+                                                            <input type="hidden" name="id" value="<?=$row["id_jenis_rekening"]?>">
+                                                            <div class="form-group">
+                                                                <label style="color: black">Jenis Rekening</label>
+                                                                <input type="text" class="form-control border border-secondary" id="" placeholder="" value="<?=$row["nama_jenis_rekening"]?>" name="jenis_rek">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label style="color: black">Detail</label>
+                                                                <textarea class="form-control border border-secondary" id="" rows="3" name="detail"><?=$row["keterangan"]?></textarea>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                        <button type="submit" value="Submit" form="formEditJenisRekening<?=$row["id_jenis_rekening"]?>" class="btn btn-primary">Edit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach ?>
                                 </div>
                             </div>
                         </div>

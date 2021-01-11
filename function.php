@@ -117,10 +117,48 @@ function tambahRek($jenis_rek){
   $no_rek = sprintf("%12d", mt_rand(1, 999999999999));;
   $jenis_rekening=htmlspecialchars($jenis_rek);
 
-  $query="INSERT INTO rekening value (NULL,'$id','$no_rek','$jenis_rekening', current_timestamp(),'0')";
+  $query="INSERT INTO rekening VALUES (NULL,'$id','$no_rek','$jenis_rekening', current_timestamp(),'0')";
 
   $result = mysqli_query($conn,$query);
 
+  $cek = mysqli_affected_rows($conn);
+  close();
+  return $cek;
+}
+
+// fungsi tambah jenis rekening data
+function tambahJenisRek($jenis_rek, $detail){
+  global $conn;
+  $filtered_jenis_rek = htmlspecialchars($jenis_rek);
+  $filtered_detail = htmlspecialchars($detail);
+
+  $query="INSERT INTO jenis_rekekening value (NULL, '$filtered_jenis_rek', '$filtered_detail')";
+
+  $result = mysqli_query($conn,$query);
+  $cek = mysqli_affected_rows($conn);
+  close();
+  return $cek;
+}
+
+// fungsi tambah jenis rekening data
+function updateJenisRek($id_rek, $jenis_rek, $detail){
+  global $conn;
+  $filtered_id_rek = htmlspecialchars($id_rek);
+  $filtered_jenis_rek = htmlspecialchars($jenis_rek);
+  $filtered_detail = htmlspecialchars($detail);
+
+  $query="UPDATE jenis_rekekening SET nama_jenis_rekening = '$filtered_jenis_rek', keterangan = '$filtered_detail' WHERE id_jenis_rekening = '$filtered_id_rek'";
+
+  $result = mysqli_query($conn,$query);
+  $cek = mysqli_affected_rows($conn);
+  close();
+  return $cek;
+}
+
+function hapusJenisRek($id_rek){
+  global $conn;
+  $filtered_id_rek = htmlspecialchars($id_rek);
+  mysqli_query($conn,"DELETE FROM jenis_rekekening WHERE id_jenis_rekening = $filtered_id_rek");
   $cek = mysqli_affected_rows($conn);
   close();
   return $cek;
