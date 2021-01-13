@@ -50,11 +50,12 @@
     </header>
 
     <!-- Body -->
-    <section class="feature_product_area section_gap mt-4">
+    <section class="feature_product_area section_gap mt-4 ml-4 pl-2">
         <div class="main_box">
             <div class="container">
                 <div class="row py-4">
                     <div class="col-md-12">
+                        <button class="btn btn-info btn-lg mb-3" data-toggle="modal" data-target="#addRekening">Buka Rekening</button>
                         <div class="card">
                             <div class="card shadow-1">
                                 <div class="card-body">
@@ -104,6 +105,32 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal Tambah Rekening -->
+    <div class="modal fade" id="addRekening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: black">Buka Rekening Baru</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST" id="formTambahRekening">
+                        <div class="form-group">
+                            <label style="color: black">Jenis Rekening</label>
+                            <input type="text" name="jenis_rek" class="form-control border border-secondary" id="" placeholder="">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" value="Submit" form="formTambahRekening" class="btn btn-primary">Tambah</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- Footer -->
     <footer class="page-footer font-small pt-4 pl-5 pr-5">
