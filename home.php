@@ -14,6 +14,17 @@ include 'function.php';
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <title>Page 1</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
 </head>
 
 <body>
@@ -54,7 +65,7 @@ include 'function.php';
     </header>
 
     <!-- Body -->
-    <section class="feature_product_area section_gap mt-4">
+    <!-- <section class="feature_product_area section_gap mt-4">
         <div class="main_box">
             <div class="container">
                 <div class="row py-4">
@@ -64,90 +75,159 @@ include 'function.php';
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <section class="header6  mbr-fullscreen" id="header6-u" style="background-image: url('img/bank.jpg');">
+
+        <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(68, 121, 217);"></div>
+
+        <div class="align-center container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1"><strong>Lumine Bank</strong></h1>
+                                
+                    <p class="mbr-text mbr-white mbr-fonts-style display-7">
+                        Mau buat rekening dengan mudah?
+                    </p>
+                    <?php if(isset($_SESSION['user'])) {?>
+                        <div class="mbr-section-btn mt-3"><a class="btn btn-danger display-4" href="rekening.php">Rekening</a></div>
+                    <?php }else{ ?>
+                        <div class="mbr-section-btn mt-3"><a class="btn btn-warning display-4" href="login.php">Login</a></div>
+                    <?php }?>
+                    
+                </div>
+            </div>
+        </div>
     </section>
-    <section class="feature_product_area section_gap mt-4">
-        <div class="main_box">
-            <div class="container">
-                <div class="row py-4">
-                    <div class="card-deck">
-                        <div class="card shadow-1">
-                            <div class="card-header">
-                                <h4 class="card-title text-center" style="color: black"><strong>SILVER CARD</strong></h4> 
-                            </div>
-                            <img class="card-img-top pt-2 pl-2 pr-2" src="img/silvercard.png" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <p style="color: black">Biaya Bulanan</p>
-                                        <p style="color: black">Limit Tarik Tunai</p>
-                                        <p style="color: black">Limit Transfer Antar Bank Lumine</p>
-                                        <p style="color: black">Limit Transfer Selain Bank Lumine</p>
-                                        <p style="color: black">Limit Transaksi Belanja</p>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p style="color: black">Rp 5.000,00</p>
-                                        <p style="color: black">Rp 5.000.000,00</p>
-                                        <p style="color: black">Rp 50.000.000,00</p>
-                                        <br>
-                                        <p style="color: black">Rp 10.000.000,00</p>
-                                        <br>
-                                        <p style="color: black">Rp 10.000.000,00</p>
-                                    </div>
-                                </div>
+
+    <section class="features12 cid-slWFEmDcEY" id="features13-x">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <div class="card-wrapper">
+                        <div class="card-box align-left">
+                            <h4 class="card-title mbr-fonts-style mb-4 display-2">
+                                <strong>What is Mobirise?</strong>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style mb-4 display-7">
+                                Use Mobirise website building software to create multiple sites for commercial and non-profit projects.</p>
+                            <div class="mbr-section-btn">
+                                <a class="btn btn-primary display-4" href="https://mobiri.se">Create your own site</a>
                             </div>
                         </div>
-                        <div class="card shadow-1">
-                            <div class="card-header">
-                                <h4 class="card-title text-center" style="color: black"><strong>GOLD CARD</strong></h4> 
-                            </div>
-                            <img class="card-img-top pt-2 pl-2 pr-2" src="img/goldcard.png" alt="Card image cap">
-                            <div class="card-body">
-                            <div class="row">
-                                    <div class="col-lg-7">
-                                        <p style="color: black">Biaya Bulanan</p>
-                                        <p style="color: black">Limit Tarik Tunai</p>
-                                        <p style="color: black">Limit Transfer Antar Bank Lumine</p>
-                                        <p style="color: black">Limit Transfer Selain Bank Lumine</p>
-                                        <p style="color: black">Limit Transaksi Belanja</p>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p style="color: black">Rp 7.500,00</p>
-                                        <p style="color: black">Rp 10.000.000,00</p>
-                                        <p style="color: black">Rp 100.000.000,00</p>
-                                        <br>
-                                        <p style="color: black">Rp 15.000.000,00</p>
-                                        <br>
-                                        <p style="color: black">Rp 50.000.000,00</p>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="item mbr-flex">
+                        <div class="icon-box">
+                            <span class="mbr-iconfont mobi-mbri-globe-2 mobi-mbri"></span>
                         </div>
-                        <div class="card shadow-1">
-                            <div class="card-header">
-                                <h4 class="card-title text-center" style="color: black"><strong>PLATINUM CARD</strong></h4> 
-                            </div>
-                            <img class="card-img-top pt-2 pl-2 pr-2" src="img/platinumcard.png" alt="Card image cap">
-                            <div class="card-body">
-                            <div class="row">
-                                    <div class="col-lg-7">
-                                        <p style="color: black">Biaya Bulanan</p>
-                                        <p style="color: black">Limit Tarik Tunai</p>
-                                        <p style="color: black">Limit Transfer Antar Bank Lumine</p>
-                                        <p style="color: black">Limit Transfer Selain Bank Lumine</p>
-                                        <p style="color: black">Limit Transaksi Belanja</p>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p style="color: black">Rp 10.000,00</p>
-                                        <p style="color: black">Rp 10.000.000,00</p>
-                                        <p style="color: black">Rp 100.000.000,00</p>
-                                        <br>
-                                        <p style="color: black">Rp 25.000.000,00</p>
-                                        <br>
-                                        <p style="color: black">Rp 100.000.000,00</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="text-box">
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7">
+                                <strong>No Coding</strong>
+                            </h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">You don't have to code to create your own site. Select one of available themes in the Mobirise sitebuilder.</h5>
                         </div>
+                    </div>
+                    <div class="item mbr-flex">
+                        <div class="icon-box">
+                            <span class="mbr-iconfont mobi-mbri-update mobi-mbri"></span>
+                        </div>
+                        <div class="text-box">
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7">
+                                <strong>Mobile Friendly</strong>
+                            </h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">All sites you create with the Mobirise web builder are mobile-friendly natively. No special actions required.</h5>
+                        </div>
+                    </div>
+                    <div class="item mbr-flex">
+                        <div class="icon-box">
+                            <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri"></span>
+                        </div>
+                        <div class="text-box">
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7">
+                                <strong>Unique Styles</strong>
+                            </h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Select the theme that suits you. Each theme in the Mobirise site builder contains a set of unique blocks.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery3 cid-slWFyIl0dV" id="gallery3-w">
+        
+        
+        <div class="container-fluid">
+            <div class="mbr-section-head">
+                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Jenis Rekening Kita</strong></h4>
+                <!-- <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Images with Title and Text</h5> -->
+            </div>
+            <div class="row mt-4">
+                <div class="item features-image сol-12 col-md-6 col-lg-3">
+                    <div class="item-wrapper">
+                        <div class="item-img">
+                            <img src="assets/images/features1.jpg">
+                        </div>
+                        <div class="item-content">
+                            <h5 class="item-title mbr-fonts-style display-7">
+                                <strong>Card Title</strong>
+                            </h5>
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
+                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="item features-image сol-12 col-md-6 col-lg-3">
+                    <div class="item-wrapper">
+                        <div class="item-img">
+                            <img src="assets/images/features2.jpg" data-slide-to="1">
+                        </div>
+                        <div class="item-content">
+                            <h5 class="item-title mbr-fonts-style display-7">
+                                <strong>Card Title</strong>
+                            </h5>
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
+                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
+                        </div>
+                        
+                    </div>
+                </div><div class="item features-image сol-12 col-md-6 col-lg-3">
+                    <div class="item-wrapper">
+                        <div class="item-img">
+                            <img src="assets/images/features3.jpg" data-slide-to="2">
+                        </div>
+                        <div class="item-content">
+                            <h5 class="item-title mbr-fonts-style display-7">
+                                <strong>Card Title</strong>
+                            </h5>
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
+                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="item features-image сol-12 col-md-6 col-lg-3">
+                    <div class="item-wrapper">
+                        <div class="item-img">
+                            <img src="assets/images/features4.jpg" alt="" title="">
+                        </div>
+                        <div class="item-content">
+                            <h5 class="item-title mbr-fonts-style display-7">
+                                <strong>Card Title</strong>
+                            </h5>
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
+                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
