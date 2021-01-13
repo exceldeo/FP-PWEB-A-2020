@@ -3,6 +3,9 @@ include 'function.php';
 
 $data = query("SELECT * FROM jenis_rekekening");
 
+if(isset($_GET['keyword'])){
+    $data = cariJenisRekening($_GET['keyword']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +83,7 @@ $data = query("SELECT * FROM jenis_rekekening");
                                     class="btn btn-primary mb-3 float-left" data-toggle="modal" data-target="#addJenisRekening">Tambah Jenis Rekening</button></span>
                                 <form action="" method="get">
                                     <div class="input-group mb-3 col-md-4 float-right">
-                                        <input type="text" name="q" class="form-control" placeholder="Cari...">
+                                        <input type="text" name="keyword" class="form-control" placeholder="Cari..." autofocus autocomplete="off" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword'] : "" ?>">
                                         <div class="input-group-append">
                                             <button class="btn btn-secondary" type="submit">Cari</button>
                                         </div>

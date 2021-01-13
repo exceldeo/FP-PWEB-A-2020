@@ -179,6 +179,14 @@ function hapusJenisRek($id_rek){
   return $cek;
 }
 
+function cariRekening($keyword) {
+  return query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_rekening, r.status FROM user u, jenis_rekekening jk , rekening r WHERE u.id = r.user_id AND r.jenis_rekening  = jk.id_jenis_rekening AND u.nama LIKE '%$keyword%'");
+}
+
+function cariJenisRekening($keyword) {
+  return query("SELECT * FROM jenis_rekekening WHERE nama_jenis_rekening LIKE '%$keyword%'");
+}
+
 function close(){
   mysqli_close(mysqli_connect("localhost","root","","db_bank_fp_pweb"));
 }
