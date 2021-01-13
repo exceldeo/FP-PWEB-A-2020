@@ -44,11 +44,11 @@ include 'function.php';
                         <ul class="nav">
                             <?php if(isset($_SESSION['user'])) {?>
                                 <li class="nav-item">
-                                    <a type="button" class="" href="rekening.php"
+                                    <a type="button" class="btn" href="rekening.php"
                                         tabindex="-1" aria-disabled="true">Rekening</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a type="button" class=" btn btn-danger" href="logout.php"
+                                    <a type="button" class=" btn btn-outline-danger" href="logout.php"
                                         tabindex="-1" aria-disabled="true">Logout</a>
                                 </li>
                             <?php }else{ ?>
@@ -90,9 +90,9 @@ include 'function.php';
                         Mau buat rekening dengan mudah?
                     </p>
                     <?php if(isset($_SESSION['user'])) {?>
-                        <div class="mbr-section-btn mt-3"><a class="btn btn-danger display-4" href="rekening.php">Rekening</a></div>
+                        <<a class="btn btn-lg btn-warning display-4" href="rekening.php">Rekening</a>
                     <?php }else{ ?>
-                        <div class="mbr-section-btn mt-3"><a class="btn btn-warning display-4" href="login.php">Login</a></div>
+                        <a class="btn btn-lg btn-primary display-3" href="login.php">Login</a>
                     <?php }?>
                     
                 </div>

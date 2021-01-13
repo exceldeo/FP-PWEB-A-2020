@@ -113,11 +113,19 @@ function updateStatusReknon($idRek){
 // fungsi tambah rekening data
 function tambahRek($jenis_rek){
   global $conn;
+  $cek = 0;
   $user_id = $_SESSION["user"]["id"];
   $no_rek = sprintf("%12d", mt_rand(1, 999999999999));;
   $jenis_rekening=htmlspecialchars($jenis_rek);
 
-  $query="INSERT INTO rekening VALUES (NULL,'$id','$no_rek','$jenis_rekening', current_timestamp(),'0')";
+  $query="SELECT * FROM rekening WHERE user_id ='$user_id' AND jenis_rekening = '$jenis_rek'";
+  $result = query($query);
+
+  if(!empty($result)){
+    return $cek;
+  }
+
+  $query="INSERT INTO rekening VALUES (NULL,'$user_id','$no_rek','$jenis_rekening', current_timestamp(),'0')";
 
   $result = mysqli_query($conn,$query);
 

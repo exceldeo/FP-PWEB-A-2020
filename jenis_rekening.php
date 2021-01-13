@@ -44,19 +44,19 @@ $data = query("SELECT * FROM jenis_rekekening");
                 </li>
                 <a href="admin.php" class="bg-dark list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
-                        <span class=""><i class="material-icons md-24 pr-2">home</i></span>
-                        <span class="menu-collapsed">Dashboard</span>
+                        <span class=""><i class="material-icons md-24 pr-2">list_alt</i></span>
+                        <span class="menu-collapsed">Daftar Rekening</span>
                     </div>
                 </a>
                 <a href="jenis_rekening.php" class="bg-dark list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
-                        <span class=""><i class="material-icons md-24 pr-2">work</i></span>
+                        <span class=""><i class="material-icons md-24 pr-2">list</i></span>
                         <span class="menu-collapsed">Jenis Rekening</span>
                     </div>
                 </a>
                 <a href="logout.php" class="bg-dark list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
-                        <span class=""><i class="material-icons md-24 pr-2">work</i></span>
+                        <span class=""><i class="material-icons md-24 pr-2">exit_to_app</i></span>
                         <span class="menu-collapsed">Logout</span>
                     </div>
                 </a>
@@ -87,16 +87,6 @@ $data = query("SELECT * FROM jenis_rekekening");
                                     </div>
                                 </form>
                                 <div class="table-responsive text-center">
-                                    <?php if(isset($_SESSION['fail_message'])) {?>
-                                        <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["fail_message"]?></h6>
-                                    <?php 
-                                        unset($_SESSION["fail_message"]);
-                                    } ?>
-                                    <?php if(isset($_SESSION['success_message'])) {?>
-                                        <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["success_message"]?></h6>
-                                    <?php 
-                                        unset($_SESSION["success_message"]);
-                                    } ?>
                                     <table class="table table-hover table-bordered">
                                         <thead>
                                             <tr>
@@ -124,7 +114,7 @@ $data = query("SELECT * FROM jenis_rekekening");
                                                                 class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editJenisRekening<?=$row["id_jenis_rekening"]?>">Edit</a>
 
                                                             <input type="hidden" name="id" value="<?=$row["id_jenis_rekening"]?>">
-                                                            <button type="submit" value="Submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus Rekening?')">Hapus</button>
+                                                            <button type="submit" value="Submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus Jenis Rekening?')">Hapus</button>
                                                         </form>
                                                     </td>
                                                 </tr>

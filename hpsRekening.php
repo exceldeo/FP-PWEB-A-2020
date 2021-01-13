@@ -1,13 +1,13 @@
 <?php
   require 'function.php';
 
-  $id=$_POST["id_rekening"];
+  $id=$_GET["id_rekening"];
 
   if(hapusRekening($id)>0){
-    $_SESSION["success_message"] = "data berhasil dihapus";
+    $_SESSION["success_message"] = "Rekening berhasil dihapus";
   }
   else{
-    $_SESSION["fail_message"] = "data gagal dihapus";
+    $_SESSION["fail_message"] = "Rekening gagal dihapus";
   }
-  header('Location: home.php');
+  header('Location: rekening.php');
   exit;

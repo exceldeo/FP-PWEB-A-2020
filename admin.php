@@ -42,19 +42,19 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                     </li>
                     <a href="admin.php" class="bg-dark list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-start align-items-center">
-                            <span class=""><i class="material-icons md-24 pr-2">home</i></span>
-                            <span class="menu-collapsed">Dashboard</span>
+                            <span class=""><i class="material-icons md-24 pr-2">list_alt</i></span>
+                            <span class="menu-collapsed">Daftar Rekening</span>
                         </div>
                     </a>
                     <a href="jenis_rekening.php" class="bg-dark list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-start align-items-center">
-                            <span class=""><i class="material-icons md-24 pr-2">work</i></span>
+                            <span class=""><i class="material-icons md-24 pr-2">list</i></span>
                             <span class="menu-collapsed">Jenis Rekening</span>
                         </div>
                     </a>
                     <a href="logout.php" class="bg-dark list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-start align-items-center">
-                            <span class=""><i class="material-icons md-24 pr-2">work</i></span>
+                            <span class=""><i class="material-icons md-24 pr-2">exit_to_app</i></span>
                             <span class="menu-collapsed">Logout</span>
                         </div>
                     </a>
@@ -83,21 +83,11 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                                         </div>
                                     </form>
                                     <div class="table-responsive text-center">
-                                        <?php if(isset($_SESSION['fail_message'])) {?>
-                                            <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["fail_message"]?></h6>
-                                        <?php 
-                                            unset($_SESSION["fail_message"]);
-                                        } ?>
-                                        <?php if(isset($_SESSION['success_message'])) {?>
-                                            <h6 class="card-subtitle mb-2 text-muted my-auto text-left"><?=$_SESSION["success_message"]?></h6>
-                                        <?php 
-                                            unset($_SESSION["success_message"]);
-                                        } ?>
                                         <table class="table table-hover table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>ID Nasabah</th>
-                                                    <th>Nasabah</th>
+                                                    <th>Nama Nasabah</th>
                                                     <th>Jenis Rekening</th>
                                                     <th>Nomor Rekening</td>
                                                     <th>Status</td>
@@ -111,17 +101,17 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                                                 // var_dump($row);
                                                 ?>
                                                 <tr>
-                                                    <td><strong><?=$row['id']?></strong></td>
+                                                    <td><strong><?=$nomor++?></strong></td>
                                                     <td>
                                                         <strong><?=$row['nama']?></strong>
                                                     </td>
                                                     <td><?=$row['nama_jenis_rekening']?></td>
-                                                    <td><?=$row['no_rekening']?></td>
+                                                    <td><?= substr($row['no_rekening'],0,4).' '.substr($row['no_rekening'],4,4).' '.substr($row['no_rekening'],8,4).' ' ?></td>
                                                 <?php if($row['status'] == 1):?>
                                                     <td>Aktif</td>
                                                     <td>
                                                     <a href="updateStatusnon.php?id_rekening=<?=$row['id_rekening']?>"
-                                                        class="btn btn-success btn-sm">Nonaktifkan</a>
+                                                        class="btn btn-danger btn-sm">Nonaktifkan</a>
                                                     </td>
                                                 <?php else: ?>
                                                     <td>Nonaktif</td>
