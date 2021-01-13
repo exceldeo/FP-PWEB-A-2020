@@ -37,7 +37,7 @@ include 'function.php';
                                         tabindex="-1" aria-disabled="true">Rekening</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a type="button" class=" btn btn-outline-primary" href="logout.php"
+                                    <a type="button" class=" btn btn-danger" href="logout.php"
                                         tabindex="-1" aria-disabled="true">Logout</a>
                                 </li>
                             <?php }else{ ?>
