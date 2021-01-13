@@ -27,13 +27,6 @@
                     </button>
                     <div>
                         <ul class="nav">
-                            <!-- <li class="nav-item">
-                                <a type="button" class=" btn btn-outline-primary" href="login.php"
-                                    tabindex="-1" aria-disabled="true">Login</a>
-                            </li> -->
-                            <li class="nav-item">
-                            <div>
-                        <ul class="nav">
                             <?php if(isset($_SESSION['user'])) {?>
                                 <li class="nav-item">
                                     <a type="button" class="" href="rekening.php"
@@ -49,10 +42,6 @@
                                         tabindex="-1" aria-disabled="true">Login</a>
                                 </li>
                             <?php }?>
-                            
-                        </ul>
-                    </div>
-                            </li>
                         </ul>
                     </div>
                 </div>

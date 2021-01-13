@@ -46,7 +46,6 @@ include 'function.php';
                                         tabindex="-1" aria-disabled="true">Login</a>
                                 </li>
                             <?php }?>
-                            
                         </ul>
                     </div>
                 </div>
