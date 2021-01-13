@@ -50,7 +50,8 @@ include 'function.php';
                                     <label>Password</label><br>
                                     <input type="password" name="password" id="password" class="form-control bg-light"
                                         required>
-                                </div>
+                                    </div>
+                                    <p id="cek1" class="my-1"></p>
                                 <div class="form-group">
                                     <label>No KTP</label><br>
                                     <input type="text" name="no_ktp" id="no_ktp" class="form-control bg-light" required>
@@ -78,6 +79,28 @@ include 'function.php';
             </div>
         </div>
     </div>
+
+<script>
+
+const text = document.querySelector('#password');
+const cek1 = document.querySelector('#cek1');
+const cek2 = document.querySelector('#cek2');
+
+text.addEventListener('input',cek);
+
+function cek(value) {
+    const input = value.target.value;
+    console.log(input);
+    if((input.length > 6) && (/[a-z]/.test(input) &&  /[A-Z]/.test(input) &&  /[0-9]/.test(input)))
+    cek1.innerHTML = '<span class="bg-success px-1 py-1" style="border-radius:5px;color:white">Sangat kuat</span>'; 
+    else if((input.length > 6) || (/[a-z]/.test(input) &&  /[A-Z]/.test(input) &&  /[0-9]/.test(input)))
+    cek1.innerHTML = '<span class="bg-warning px-1 py-1" style="border-radius:5px;color:white">Sedang</span>'; 
+    else
+    cek1.innerHTML = '<span class="bg-danger px-1 py-1" style="border-radius:5px;color:white">lemah</span>'; 
+
+}
+
+</script>
 </body>
 
 </html>

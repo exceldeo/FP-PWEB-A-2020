@@ -26,12 +26,12 @@
     }
 
     if(register($_POST, $name_file) > 0){
-        $_SESSION["success_message"] = "Register berhasil";
+        // $_SESSION["success_message"] = "Register berhasil";
         header('Location: home.php');
         exit;
     }
     else{
-        $_SESSION["fail_message"] = "Register gagal";
+        // $_SESSION["fail_message"] = "Register gagal";
         header('Location: register.php');
         exit;
     }

@@ -1,6 +1,8 @@
 <?php 
 include 'function.php';
 
+$list_rekening = query("SELECT * FROM jenis_rekekening");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -178,71 +180,27 @@ include 'function.php';
                 <!-- <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Images with Title and Text</h5> -->
             </div>
             <div class="row mt-4">
-                <div class="item features-image сol-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="item-img">
-                            <img src="img/silvercard.png">
-                        </div>
-                        <div class="item-content">
-                            <h5 class="item-title mbr-fonts-style display-7">
-                                <strong>Silver</strong>
-                            </h5>
+            <?php
+            foreach($list_rekening as $row) :
+            ?>
+                    <div class="item features-image сol-12 col-md-6 col-lg-4">
+                        <div class="item-wrapper">
+                            <div class="item-img">
+                                <img src="img/silvercard.png">
+                            </div>
+                            <div class="item-content">
+                                <h5 class="item-title mbr-fonts-style display-7">
+                                    <strong><?=$row['nama_jenis_rekening']?></strong>
+                                </h5>
+                                
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7">
+                                    <?=$row['keterangan']?></p>
+                            </div>
                             
-                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                Nikmati kemudahan bertransaksi dengan Rekening Silver kami. Hanya dengan Rp5.000,00 perbulan, Anda dapat menikmati mudahnya bertransaksi di mana saja.</p>
                         </div>
-                        
                     </div>
+                    <?php endforeach;?>    
                 </div>
-                
-                <div class="item features-image сol-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="item-img">
-                            <img src="img/goldcard.png" data-slide-to="1">
-                        </div>
-                        <div class="item-content">
-                            <h5 class="item-title mbr-fonts-style display-7">
-                                <strong>Gold</strong>
-                            </h5>
-                            
-                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                Ingin mendapat keuntungan lebih banyak saat bertransaksi? Rekening Gold kami solusinya.</p>
-                        </div>
-                        
-                    </div>
-                </div><div class="item features-image сol-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="item-img">
-                            <img src="img/platinumcard.png" data-slide-to="2">
-                        </div>
-                        <div class="item-content">
-                            <h5 class="item-title mbr-fonts-style display-7">
-                                <strong>Platinum</strong>
-                            </h5>
-                            
-                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                Dapatkan keuntungan yang lebih premium dengan Rekening Platinum kami. Bertransaksi nyaris tanpa batas dimana pun dan kapan pun.</p>
-                        </div>
-                        
-                    </div>
-                </div>
-                <!-- <div class="item features-image сol-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
-                        <div class="item-img">
-                            <img src="assets/images/features4.jpg" alt="" title="">
-                        </div>
-                        <div class="item-content">
-                            <h5 class="item-title mbr-fonts-style display-7">
-                                <strong>Card Title</strong>
-                            </h5>
-                            
-                            <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
-                        </div>
-                        
-                    </div>
-                </div> -->
-            </div>
         </div>
     </section>
     

@@ -59,6 +59,8 @@ function register($data,$file){
   $password=md5(htmlspecialchars($data["password"]));
   $alamat=htmlspecialchars($data["alamat"]);
   $no_ktp=htmlspecialchars($data["no_ktp"]);
+
+  
   
 
   $query="INSERT INTO user value (NULL,'$nama','$email','$password', 'U')";
@@ -77,6 +79,11 @@ function register($data,$file){
 
   $cek = mysqli_affected_rows($conn);
   close();
+
+  if($cek > 0){
+    $_SESSION["fail_message"] = "Register gagal";
+  }
+
   return $cek;
 }
 

@@ -3,6 +3,11 @@ include 'function.php';
 
 $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_rekening, r.status FROM user u, jenis_rekekening jk , rekening r WHERE u.id = r.user_id AND r.jenis_rekening  = jk.id_jenis_rekening");
 
+
+if(isset($_POST['tmbl_cari'])){
+    $data = cari($_POST['keyword']);
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -76,10 +81,12 @@ $data = query("SELECT u.id, u.nama,r.id_rekening, jk.nama_jenis_rekening, r.no_r
                                 <div class="card-body">
                                     <form action="" method="get">
                                         <div class="input-group mb-3 col-md-4 float-right">
-                                            <input type="text" name="q" class="form-control" placeholder="Cari...">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-secondary" type="submit">Cari</button>
-                                            </div>
+                                            <form action="" method="post">
+                                                <input type="text" name="keyword" class="form-control" placeholder="Cari..." autofocus autocomplete="off">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-secondary" type="submit">Cari</button>
+                                                </div>
+                                            <button type="submit" class="btn btn-primary tengah2" name="tmbl_cari">Cari</button>
                                         </div>
                                     </form>
                                     <div class="table-responsive text-center">
