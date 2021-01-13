@@ -77,7 +77,7 @@ include 'function.php';
         </div>
     </section> -->
 
-    <section class="header6  mbr-fullscreen" id="header6-u" style="background-image: url('img/bank.jpg');">
+    <section class="header6  mbr-fullscreen" id="header6-u" style="background-image: url('img/bank1.jpg');">
 
         <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(68, 121, 217);"></div>
 
@@ -107,13 +107,14 @@ include 'function.php';
                     <div class="card-wrapper">
                         <div class="card-box align-left">
                             <h4 class="card-title mbr-fonts-style mb-4 display-2">
-                                <strong>What is Mobirise?</strong>
+                                <strong>Lumine Bank</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                                Use Mobirise website building software to create multiple sites for commercial and non-profit projects.</p>
-                            <div class="mbr-section-btn">
-                                <a class="btn btn-primary display-4" href="https://mobiri.se">Create your own site</a>
-                            </div>
+                                Lumine Bank berdiri sebagai perusahaan perbankan pada 3 Mei 1920 di Jakarta.
+                                Dalam perjalanannya, Lumine Bank mengalami proses siklus pasang-surut yang semakin menguatkan keberadaannya di industri perbankan Indonesia.
+                                Ujian terberat yang dialami Lumine Bank dan seluruh perbankan Indonesia adalah krisis moneter di tahun 1997-1998.
+                                Sejumlah Bank berguguran di masa itu, sementara Lumine Bank sanggup bertahan sebagai salah satu Bank yang sehat dan tidak memerlukan rekapitalisasi. 
+                                Keberhasilan untuk bertahan adalah karena Lumine Bank adalah Bank yang mengelola usaha berdasarkan prinsip tata kelola perusahaan yang baik yang selalu menganut prinsip Profesionalisme, Transparansi, Tanggung jawab, Akuntabilitas dan Kewajaran.</p>
                         </div>
                     </div>
                 </div>
@@ -124,20 +125,20 @@ include 'function.php';
                         </div>
                         <div class="text-box">
                             <h4 class="icon-title mbr-black mbr-fonts-style display-7">
-                                <strong>No Coding</strong>
+                                <strong>Easy Access</strong>
                             </h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">You don't have to code to create your own site. Select one of available themes in the Mobirise sitebuilder.</h5>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Dengan lebih dari 200 kantor cabang yang tersebar di seluruh Indonesia, nasabah kami tidak perlu khawatir jika ingin melakukan transaksi.</h5>
                         </div>
                     </div>
                     <div class="item mbr-flex">
                         <div class="icon-box">
-                            <span class="mbr-iconfont mobi-mbri-update mobi-mbri"></span>
+                            <span class="mbr-iconfont mobi-mbri-growing-chart mobi-mbri"></span>
                         </div>
                         <div class="text-box">
                             <h4 class="icon-title mbr-black mbr-fonts-style display-7">
-                                <strong>Mobile Friendly</strong>
+                                <strong>Benefit</strong>
                             </h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">All sites you create with the Mobirise web builder are mobile-friendly natively. No special actions required.</h5>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Nikmati banyak promo dan undian bagi seluruh nasabah Lumine Bank sepanjang tahun.</h5>
                         </div>
                     </div>
                     <div class="item mbr-flex">
@@ -146,9 +147,20 @@ include 'function.php';
                         </div>
                         <div class="text-box">
                             <h4 class="icon-title mbr-black mbr-fonts-style display-7">
-                                <strong>Unique Styles</strong>
+                                <strong>Best Service</strong>
                             </h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Select the theme that suits you. Each theme in the Mobirise site builder contains a set of unique blocks.</h5>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Kami selalu siap melayani Anda dengan pelayanan terbaik kami.</h5>
+                        </div>
+                    </div>
+                    <div class="item mbr-flex">
+                        <div class="icon-box">
+                            <span class="mbr-iconfont mobi-mbri-lock mobi-mbri"></span>
+                        </div>
+                        <div class="text-box">
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7">
+                                <strong>Secure</strong>
+                            </h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Keamanan dalam bertransaksi nasabah akan selalu kami jaga dan prioritaskan.</h5>
                         </div>
                     </div>
                 </div>
@@ -162,59 +174,59 @@ include 'function.php';
         <div class="container-fluid">
             <div class="mbr-section-head">
                 <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                    <strong>Jenis Rekening Kita</strong></h4>
+                    <strong>Jenis Rekening</strong></h4>
                 <!-- <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Images with Title and Text</h5> -->
             </div>
             <div class="row mt-4">
-                <div class="item features-image сol-12 col-md-6 col-lg-3">
+                <div class="item features-image сol-12 col-md-6 col-lg-4">
                     <div class="item-wrapper">
                         <div class="item-img">
-                            <img src="assets/images/features1.jpg">
+                            <img src="img/silvercard.png">
                         </div>
                         <div class="item-content">
                             <h5 class="item-title mbr-fonts-style display-7">
-                                <strong>Card Title</strong>
+                                <strong>Silver</strong>
                             </h5>
                             
                             <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
+                                Nikmati kemudahan bertransaksi dengan Rekening Silver kami. Hanya dengan Rp5.000,00 perbulan, Anda dapat menikmati mudahnya bertransaksi di mana saja.</p>
                         </div>
                         
                     </div>
                 </div>
                 
-                <div class="item features-image сol-12 col-md-6 col-lg-3">
+                <div class="item features-image сol-12 col-md-6 col-lg-4">
                     <div class="item-wrapper">
                         <div class="item-img">
-                            <img src="assets/images/features2.jpg" data-slide-to="1">
+                            <img src="img/goldcard.png" data-slide-to="1">
                         </div>
                         <div class="item-content">
                             <h5 class="item-title mbr-fonts-style display-7">
-                                <strong>Card Title</strong>
+                                <strong>Gold</strong>
                             </h5>
                             
                             <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
+                                Ingin mendapat keuntungan lebih banyak saat bertransaksi? Rekening Gold kami solusinya.</p>
                         </div>
                         
                     </div>
-                </div><div class="item features-image сol-12 col-md-6 col-lg-3">
+                </div><div class="item features-image сol-12 col-md-6 col-lg-4">
                     <div class="item-wrapper">
                         <div class="item-img">
-                            <img src="assets/images/features3.jpg" data-slide-to="2">
+                            <img src="img/platinumcard.png" data-slide-to="2">
                         </div>
                         <div class="item-content">
                             <h5 class="item-title mbr-fonts-style display-7">
-                                <strong>Card Title</strong>
+                                <strong>Platinum</strong>
                             </h5>
                             
                             <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                Card Text. You don't have to code to create a site with Mobirise Builder. <a href="#" class="text-primary">Read more..</a></p>
+                                Dapatkan keuntungan yang lebih premium dengan Rekening Platinum kami. Bertransaksi nyaris tanpa batas dimana pun dan kapan pun.</p>
                         </div>
                         
                     </div>
                 </div>
-                <div class="item features-image сol-12 col-md-6 col-lg-3">
+                <!-- <div class="item features-image сol-12 col-md-6 col-lg-4">
                     <div class="item-wrapper">
                         <div class="item-img">
                             <img src="assets/images/features4.jpg" alt="" title="">
@@ -229,7 +241,7 @@ include 'function.php';
                         </div>
                         
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
