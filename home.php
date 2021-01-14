@@ -16,7 +16,7 @@ $list_rekening = query("SELECT * FROM jenis_rekekening");
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Page 1</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
