@@ -18,13 +18,11 @@
     
     $output = shell_exec($command);
 
-
-    if($output == "false"){
+    if(strcmp($output, "false\n") == 0){
         $_SESSION["fail_message"] = "Tidak ada wajah terdeteksi";
         header('Location: register.php');
         exit;        
     }
-
     if(register($_POST, $name_file) > 0){
         // $_SESSION["success_message"] = "Register berhasil";
         header('Location: home.php');
